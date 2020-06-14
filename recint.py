@@ -1,4 +1,8 @@
 class RecInt:
+    """
+    Need fixes!
+    """
+    # TODO: Find bug!
     xp = 0
     xk = 0
     s = 0
@@ -10,7 +14,6 @@ class RecInt:
 
     def __init__(self, xp, xk, formula, n=1000):
         self.formula = formula
-        print(self.formula)
         self.formula = self.formula.replace('^', '**')
         self.n = n
         self.xp = xp
@@ -18,7 +21,7 @@ class RecInt:
         self.dx = (self.xk - self.xp)/n
 
     def start(self):
-        for i in range(0, self.n):
+        for i in range(self.n):
             if i <= self.n:
                 temp = self.s
                 x = self.xp + i*self.dx
