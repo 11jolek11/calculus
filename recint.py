@@ -2,7 +2,7 @@ class RecInt:
     """
     Need fixes!
     """
-    # TODO: Find bug!
+    # TODO: Find bug!ma
     xp = 0
     xk = 0
     s = 0
@@ -29,8 +29,8 @@ class RecInt:
                 self.s = temp + self.fx(x)
             else:
                 hold = self.s
-                self.s = hold*self.dx
-        return self.s
+                self.s = hold
+        return self.s*self.dx
 
 
 

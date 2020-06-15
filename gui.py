@@ -7,21 +7,22 @@ class GUI:
         master.title("Calculus")
         master.geometry('850x650')
         frame_entry = Frame(master)
+
+        entry = Entry(frame_entry)
+        
         frame_choose = Frame(master)
         frame_x = Frame(master)
         frame_plot = Frame(master)
-
-        entry = Entry(frame_entry)
         formula = entry.get()
+
         radio_recint = Radiobutton(frame_choose, text="Recint")
         # print(radio_recint.state())
         radio_montecarlo = Radiobutton(frame_choose)
         radio_trap = Radiobutton(frame_choose)
-
-        entry.pack()
-        radio_recint.pack()
-        frame_entry.pack()
-        frame_choose.pack()
+        
+        radio_recint.grid(row=1)
+        frame_entry.grid(row=2)
+        frame_choose.grid(row=3)
         # self.label = Label(master, text="This is our first GUI!")
         # self.label.pack()
         #
