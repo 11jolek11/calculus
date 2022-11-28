@@ -70,7 +70,6 @@ class MonteCarlo2:
         Starts calculating value.
         """
         func = self.fx()
-        s = 0
         l_plus = 0
         for i in range(self.n):
             xi = random.uniform(self.xp, self.xk)
@@ -87,7 +86,7 @@ class MonteCarlo2:
 
 
 if __name__ == "__main__":
-    test_object = MonteCarlo(0, 1, "(x**2)+3*x+5")
+    test_object = MonteCarlo(0, math.pi, "sin(x)")
     print(test_object.start())
-    test = MonteCarlo2(xp=0, xk=1, g=1, d=0, formula="(x**2)+3*x+5")
+    test = MonteCarlo2(xp=0, xk=3.14, g=10, d=0, formula="sin(x)")
     print(test.start())
