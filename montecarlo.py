@@ -57,6 +57,7 @@ class MonteCarlo2:
         self.g = g
         self.d = d
         self.dx = (self.xk - self.xp)
+        self.h = (self.g - self.d)
         self.inside = 0
 
     def fx(self):
@@ -81,12 +82,12 @@ class MonteCarlo2:
                 l_plus -=1
             else:
                 l_plus += 0
-        return l_plus/self.n
+        return (l_plus/self.n)*self.h*self.dx
 
 
 
 if __name__ == "__main__":
-    test_object = MonteCarlo(0, math.pi, "sin(x)")
+    test_object = MonteCarlo(-1, 1, "sin(x)")
     print(test_object.start())
-    test = MonteCarlo2(xp=0, xk=3.14, g=10, d=0, formula="sin(x)")
+    test = MonteCarlo2(xp=-1, xk=1, g=1.1, d=-1.1, formula="sin(x)")
     print(test.start())
