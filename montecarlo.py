@@ -76,9 +76,9 @@ class MonteCarlo2:
             xi = random.uniform(self.xp, self.xk)
             yi = random.uniform(self.d, self.g)
             r = func(xi)
-            if r >= 0 and r >= yi:
+            if r > 0 and r >= yi:
                 l_plus += 1
-            elif r <= 0 and r < yi:
+            elif r < 0 and r < yi:
                 l_plus -=1
             else:
                 l_plus += 0
